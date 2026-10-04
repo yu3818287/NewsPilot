@@ -20,7 +20,7 @@
 后端配置位于 `TouTiao_backend/.env`，示例见 `.env.example`。
 
 ```powershell
-cd C:\Users\于浩卓\Desktop\Fast_API_project\TouTiao_backend
+cd .\Fast_API_project\TouTiao_backend
 venv\Scripts\python.exe -m uvicorn main:app --reload --port 8001
 ```
 
@@ -33,7 +33,7 @@ venv\Scripts\python.exe scripts\sync_news.py
 前端：
 
 ```powershell
-cd C:\Users\于浩卓\Desktop\Fast_API_project\xwzx-news
+cd .\Fast_API_project\xwzx-news
 npm run dev
 ```
 
@@ -51,9 +51,3 @@ npm run dev
 - `GET/POST /api/news/{news_id}/comments`：读取或发布评论。
 - `DELETE /api/news/comments/{comment_id}`：删除自己的评论。
 - `POST /api/user/avatar`：上传头像 data URL。
-
-## 安全说明
-
-- `.env` 已加入忽略清单，不要把真实 API Key 提交到版本库。
-- 旧前端千问 Key 已从源码与构建产物中移除；若该 Key 曾在远端仓库出现，应立即在供应商控制台吊销。
-- 生产部署时请修改数据库口令和 `CORS_ORIGINS`，并通过 HTTPS 提供服务。

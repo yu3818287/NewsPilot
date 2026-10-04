@@ -1,0 +1,42 @@
+# Backend secrets and Python environment
+TouTiao_backend/.env
+TouTiao_backend/.env.*
+!TouTiao_backend/.env.example
+TouTiao_backend/venv/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# User-uploaded avatars (keep the directory placeholder)
+TouTiao_backend/uploads/avatars/*
+!TouTiao_backend/uploads/avatars/.gitkeep
+
+# Frontend dependencies, builds, and local environment files
+xwzx-news/node_modules/
+xwzx-news/dist/
+xwzx-news/.env
+xwzx-news/.env.*
+
+# Temporary browser-test files and generated screenshots
+.testdeps/
+.playwright-tmp/
+tests/artifacts/
+
+# Editors and operating-system files
+.idea/
+.vscode/
+.claude/
+.codex/
+.agents/
+.aws/
+.DS_Store
+Thumbs.db
+
+# Package-manager temporary directories
+pip-*/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

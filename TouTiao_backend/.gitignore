@@ -1,0 +1,6 @@
+.env
+__pycache__/
+*.py[cod]
+uploads/avatars/*
+!uploads/avatars/.gitkeep
+.pytest_cache/

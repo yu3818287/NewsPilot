@@ -20,7 +20,7 @@
 后端配置位于 `TouTiao_backend/.env`，示例见 `.env.example`。
 
 ```powershell
-cd C:\Users\于浩卓\Desktop\Fast_API_project\TouTiao_backend
+cd .\Fast_API_project\TouTiao_backend
 venv\Scripts\python.exe -m uvicorn main:app --reload --port 8001
 ```
 
@@ -33,7 +33,7 @@ venv\Scripts\python.exe scripts\sync_news.py
 前端：
 
 ```powershell
-cd C:\Users\于浩卓\Desktop\Fast_API_project\xwzx-news
+cd .\Fast_API_project\xwzx-news
 npm run dev
 ```
 

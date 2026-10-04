@@ -127,6 +127,9 @@ Fast_API_project/
 ├── database.sql
 └── README.md
 
+
+```
+
 #Chinese
 
 # NewsPilot
@@ -155,7 +158,6 @@ Fast_API_project/
 ```powershell
 cd .\Fast_API_project\TouTiao_backend
 venv\Scripts\python.exe -m uvicorn main:app --reload --port 8001
-```
 
 首次启动会自动执行幂等数据库升级。也可以手动同步新闻：
 

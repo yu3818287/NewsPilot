@@ -1,5 +1,136 @@
 # NewsPilot
 
+NewsPilot is an AI-powered news aggregation and reading platform built with Vue 3 and FastAPI.
+
+Its core idea is:
+
+> Let the news find you — retrieve live stories, store them locally, filter them, and answer questions using the local news database.
+
+## Features
+
+### AI News Agent
+
+- DeepSeek-powered server-side AI assistant
+- LangGraph-based Agent workflow
+- Detects requests for “latest,” “today,” and “real-time” news
+- Searches public news sources automatically
+- Stores newly discovered articles in the local database
+- Uses BM25 RAG to answer questions from locally stored news
+- Returns article references and Agent execution steps
+- Filters advertisements, gambling content, download pages, and low-quality sources
+
+### Conversation History
+
+- Saves every question and AI response for authenticated users
+- Stores referenced news articles and Agent execution traces
+- Supports creating, switching, restoring, and deleting conversations
+- Automatically restores the current conversation after a page refresh
+- Keeps conversation data isolated between users
+- Guest users can still use the AI assistant without persistent history
+
+### News Collection
+
+- Collects domestic and international news
+- Only treats 2026 articles as current news
+- Extracts article metadata and original source links
+- Downloads and caches source images locally
+- Generates original Chinese summaries and local reading content
+- Prevents duplicate articles using URLs and titles
+- Runs scheduled background synchronization
+- Immediately synchronizes news when users ask for the latest stories
+
+### Reading Experience
+
+- Three-line summaries on news cards
+- “Read in 30 Seconds” summary card on detail pages
+- Full local article content without mandatory external redirects
+- Optional original-source link at the end of each article
+- Related news recommendations
+- Reading history
+- Favorites
+- User comments
+- Local fallback placeholders for missing images
+
+### AI Recommendations
+
+- Dedicated AI recommendation category
+- Prioritizes domestic and international news
+- Uses 24-hour views, total views, publication time, and image availability
+- Only recommends recent articles
+- Supports filtering news through natural-language questions
+
+### User Features
+
+- Registration and login
+- Custom profile image upload
+- Personal profile editing
+- Password management
+- User-specific favorites
+- User-specific reading history
+- User-specific AI conversations
+- User comments
+
+## Technology Stack
+
+### Backend
+
+- Python
+- FastAPI
+- SQLAlchemy 2
+- MySQL
+- LangGraph
+- BM25 RAG
+- DeepSeek API
+- Uvicorn
+
+### Frontend
+
+- Vue 3
+- Vite
+- Pinia
+- Vue Router
+- Vant UI
+- Axios
+- Marked
+- DOMPurify
+
+## Project Structure
+
+```text
+Fast_API_project/
+├── TouTiao_backend/
+│   ├── config/
+│   ├── crud/
+│   ├── migrations/
+│   ├── models/
+│   ├── routers/
+│   ├── schemas/
+│   ├── scripts/
+│   ├── services/
+│   ├── uploads/
+│   │   ├── avatars/
+│   │   └── news/
+│   ├── .env.example
+│   ├── main.py
+│   └── requirements.txt
+├── xwzx-news/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── config/
+│   │   ├── router/
+│   │   ├── store/
+│   │   └── views/
+│   ├── package.json
+│   └── vite.config.js
+├── tests/
+├── database.sql
+└── README.md
+
+#Chinese
+
+# NewsPilot
+
 这是一个 Vue 3 + FastAPI 新闻项目。AI 能力已从浏览器迁移到服务端，并升级为 DeepSeek + LangGraph + 本地新闻 RAG。
 
 ## 主要能力
@@ -16,6 +147,8 @@
 - 头像支持 PNG/JPEG/WebP 本地上传，最大 2MB。
 
 ## 启动
+
+启动前需要体检创建数据库 可直接运行本地SQL代码
 
 后端配置位于 `TouTiao_backend/.env`，示例见 `.env.example`。
 
